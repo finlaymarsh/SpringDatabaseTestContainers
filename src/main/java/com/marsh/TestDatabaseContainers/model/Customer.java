@@ -22,4 +22,13 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        final Customer other = (Customer) obj;
+        return this.id.equals(other.id) && this.firstName.equals(other.getFirstName()) && this.lastName.equals(other.getLastName());
+    }
 }
